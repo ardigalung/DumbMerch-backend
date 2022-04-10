@@ -1,0 +1,24 @@
+1. npm install sequelize sequelize-cli mysql2
+2. npx sequelize init
+3. npx sequelize-cli model:generate --name user --attributes name:string,email:string,password:string,status:string
+4. npx sequelize-cli db:migrate
+
+table:
+
+1. npx sequelize-cli model:generate --name product --attributes image:string,title:string,desc:text,price:bigint,qty:integer,idUser:integer
+
+3. npx sequelize-cli model:generate --name transaction --attributes idProduct:integer,idBuyer:integer,idSeller:integer,price:integer,status:string
+
+4. npx sequelize-cli model:generate --name profile --attributes phone:string,gender:string,address:text,idUser:integer
+
+2. npx sequelize-cli model:generate --name category --attributes name:string
+2. npx sequelize-cli model:generate --name categoryProduct --attributes idProduct:integer,idCategory:integer
+
+3. npx sequelize-cli model:generate --name admin --attributes idUser:integer,idProduct:integer,idTransaction:integer,message:string,status:string
+
+npx sequelize-cli model:generate --name productReturn --attributes idAdmin:integer,idUser:integer,idProduct:integer,idTransaction:integer,message:text,status:string 
+
+npx sequelize-cli db:migrate
+npx sequelize-cli db:migrate:undo
+
+npx sequelize-cli db:migrate:undo:all
